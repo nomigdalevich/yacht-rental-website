@@ -12,15 +12,18 @@ Since this is a static website:
 1. Clone the repository:
    ```bash
    git clone https://github.com/nomigdalevich/yacht-rental-website.git
-Or visit the repository on GitHub
- to view it online.
- 
+
 2.Navigate to the project folder:
 cd yacht-rental-website
 
+
 3.Open index.html in any web browser to view the website.
+Or visit the repository online: Yacht Rental Website on GitHub
 
 Notes
 
-Developed individually as part of Full Stack studies.
-Designed for learning purposes and showcasing HTML/CSS skills.
+- Developed individually as part of Full Stack studies.
+- Designed for learning purposes and showcasing HTML/CSS skills.
+
+
+
