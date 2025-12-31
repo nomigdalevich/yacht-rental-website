@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+body {
+    font-family: 'Amatic SC', cursive;
+    /*גופן כתב  בעברית */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* ביטול גלילה */
+    display: flex;
+    justify-content: center;
+    /* מרכז את התמונה אופקית */
+    align-items: center;
+    /* מרכז את התמונה אנכית */
+    height: 100vh;
+    /* גובה מלא של הדפדפן */
+    background-color: #33333382;
+    /* צבע רקע (אפור בהיר) */
+    background-blend-mode: overlay;
+    background-image: url(../image/answer/good.png);
+    background-size: cover;
+    z-index: 0;
+
+
+
+}
+
+
+.container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+    max-width: 400px;
+    width: 100%;
+
+    z-index: 0;
+    text-align: center;
+}
+
+.container h1 {
+    font-size: xx-large;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.btn-home {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    font-size: x-large;
+}
+
+.btn-home:hover {
+    background-color: #ffde59;
+    color: #000000;
+}
+
+@media(max-width:600px) {
+    body {
+      grid-template-columns: 10% 8fr 10%;
+      grid-template-rows: 5% 8fr 15%;
+      grid-template-areas:
+        header
+        article
+        footer;
+    }
+  }

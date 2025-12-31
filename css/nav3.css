@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+.navBar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: hsla(180, 100%, 99%, 0.6); */
+  background-color: black;
+  padding: 1.5em;
+  direction: rtl;
+  z-index: 10;
+  /* font-family: 'Times New Roman', Times, serif; */
+  font-family: 'Amatic SC', cursive;
+  margin: 0;
+}
+
+.navBar :hover {
+  /* color: rgb(255, 255, 255);
+    text-decoration: overline; 
+    text-decoration-line: overline; 
+    text-decoration-style: dotted;
+    text-decoration-color: rgb(255, 248, 53); */
+  /**/
+  /*אפשרות לעיצוב שורת התפריט*/
+  background-color: #ffde59;
+  border: 3px solid #ffde59;
+  border-radius: 4px;
+  color: rgb(0, 0, 0);
+  line-height: 1;
+  /* עוזר במרכזות הטקסט בתוך הקישור */
+}
+
+
+.navBar a {
+  color: rgb(249, 249, 249);
+  text-decoration: none;
+  /* color: rgb(5, 84, 96); */
+  font-size: 2em;
+  display: block;
+  transition: color 0.3s ease;
+  padding: 10px;
+  margin-right: 25px;
+}
+
+.navBar a.active {
+  background-color: #ffde59;
+  border: 3px solid #ffde59;
+  border-radius: 4px;
+  color: rgb(0, 0, 0);
+  line-height: 1;
+  /* עוזר במרכזות הטקסט בתוך הקישור */
+}
+
+/* #logo{
+  position: fixed;
+  width: 300px;
+  right: -40px;
+  margin-bottom:4px;
+  top: -60px;
+  z-index: 100; */
+/* } */
+
+/* .navBar a.active {
+  background-color: #04AA6D;
+  border: 3px solid #04AA6D;
+  border-radius: 4px;
+  color: white;
+} */
+
+#logo {
+  position: fixed;
+  width: 200px;
+  right: -40px;
+  margin-bottom: 4px;
+  top: -40px;
+  z-index: 1000;
+  /* ודא שהערך גבוה מספיק */
+}
+
+@media(max-width:600px) {
+  body {
+    grid-template-columns: 10% 8fr 10%;
+    grid-template-rows: 5% 8fr 15%;
+    grid-template-areas:
+      header
+      article
+      footer;
+  }
+}

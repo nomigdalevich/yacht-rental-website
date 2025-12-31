@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+body {
+
+
+  overflow-x: hidden;
+  font-family: 'Amatic SC', cursive;
+  /* גופן כתב  בעברית */
+  display: grid;
+  grid-template-rows: 100px 2fr 1fr;
+  /* header + article + footer */
+  grid-template-columns: 1fr 1fr;
+  /* 3 עמודות */
+  height: 200vh;
+  margin: 0;
+  padding: 0;
+  /* ללא רווח פנימי */
+
+  grid-template-areas:
+
+    "header header "
+    "article article "
+    "footer footer ";
+}
+
+header {
+  grid-area: header;
+  height: 100%;
+  /* גובה מתאים ל-header */
+  margin: 0;
+  padding: 0;
+  border: none;
+  margin-inline-start: 5px;
+
+
+  background-color: rgba(11, 46, 152, 0.6);
+
+  z-index: 10;
+  /* קובע שהקישורים יהיו מעל כל תוכן אחר */
+}
+
+h1 {
+  font-size: xx-large;
+  color: rgb(5, 84, 96);
+  ;
+}
+
+article {
+  grid-area: article;
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+  margin-top: 0;
+  text-align: center;
+
+
+}
+
+.arteverybady {
+  display: flex;
+  flex-direction: column;
+}
+
+.yact {
+  display: flex;
+  flex-direction: column;
+
+  /* border: 2px solid #000; גודל וצבע המסגרת */
+  /* padding: 20px; ריווח פנימי */
+  margin-bottom: 20px;
+  /* ריווח בין יכטות */
+  border-radius: 10px;
+  /* פינות מעוגלות */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  /* צללים עדינים */
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.line-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  /* גובה לאיזון המרחק */
+}
+
+.line {
+  position: absolute;
+  height: 2px;
+  /* גובה הפס */
+  background-color: black;
+  width: 50%;
+  /* רוחב כל פס */
+  z-index: 1;
+  /* הפסים יהיו מתחת לתמונה */
+}
+
+.top-line {
+  top: 45%;
+  /* ממקם את הפס העליון */
+}
+
+.bottom-line {
+  bottom: 45%;
+  /* ממקם את הפס התחתון */
+}
+
+.center-image {
+  position: relative;
+  z-index: 2;
+  /*  התמונה תהיה מעל הפסים */
+  width: 300px;
+  /* רוחב התמונה */
+  height: auto;
+  margin-top: -20px;
+  /* הזזת התמונה כך שהיא תהיה באמצע הפסים */
+}
+
+
+
+
+
+/* הקונטיינר הכללי */
+/* הקונטיינר הכללי של הגלריה */
+.slider-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* מסתיר את הגלילה */
+}
+
+/* הגלריה עם גלילה אופקית */
+.yacht-gallery {
+  display: flex;
+  overflow-x: scroll;
+  /* גלילה אופקית */
+  scroll-behavior: smooth;
+  /* גלילה חלקה */
+}
+
+.yacht-gallery img {
+  width: 500px;
+  /* רוחב כל תמונה */
+  height: 300px;
+  /* גובה כל תמונה */
+  margin-right: 10px;
+  /* רווח בין התמונות */
+  object-fit: cover;
+  /* התאמת התמונה לגודל הקופסה */
+  border-radius: 10px;
+  /* פינות מעוגלות */
+}
+
+/* שינוי צבע סרגל הגלילה */
+.yacht-gallery::-webkit-scrollbar {
+  height: 8px;
+  /* גובה הסרגל */
+}
+
+.yacht-gallery::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 0, 0, 0.3);
+  /* צבע הסרגל */
+  border-radius: 10px;
+  /* פינות מעוגלות */
+}
+
+.yacht-gallery::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* צבע הרקע של המסילה */
+}
+
+.midot {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* מסדר את האלמנטים באופן אחיד */
+  margin-right: 90px;
+}
+
+.perutMidot {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  /* כל אחד מהחלקים ייקח מקום שווה */
+  align-items: center;
+  /* מיישר את התמונה והטקסט באמצע */
+  padding: 20px;
+  /* ריווח פנימי בין התמונה והטקסט */
+}
+
+.perutMidot img {
+  width: 50px;
+  /* גודל התמונה */
+  height: auto;
+  /* שומר על פרופורציות התמונה */
+  margin-right: 30px;
+  /* ריווח בין התמונה לטקסט */
+  margin-left: 30px;
+}
+
+.midcol {
+  display: flex;
+  flex-direction: column;
+}
+
+.midcol p {
+  margin: 0px 0;
+  /* ריווח קטן בין הכיתובים */
+  font-size: x-large;
+  color: #000;
+  /* text-shadow: 
+      -0.6px -0.6px 0 #000000,  
+      -0.6px -0.6px 0 #000000,  
+      -0.6px -0.6px 0 #000000,  
+      -0.6px -0.6px 0 #000000,   */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+iframe {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
+  /* z-index: 1; */
+  font-family: 'Times New Roman', Times, serif;
+  border: none;
+  margin-bottom: 0;
+  height: 100px;
+  margin: 0;
+
+
+}
+
+@media(max-width:600px) {
+  body {
+    grid-template-columns: 10% 8fr 10%;
+    grid-template-rows: 5% 8fr 15%;
+    grid-template-areas:
+      header
+      article
+      footer;
+  }
+}

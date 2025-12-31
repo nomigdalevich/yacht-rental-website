@@ -1,0 +1,622 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+body {
+
+
+  overflow-x: hidden;
+  font-family: 'Amatic SC', cursive;
+  /* גופן כתב  בעברית */
+  display: grid;
+  grid-template-rows: 100px 2fr 1fr;
+  /* header + article + footer */
+  grid-template-columns: 1fr 1fr;
+  /* 3 עמודות */
+  height: 200vh;
+  margin: 0;
+  padding: 0;
+  /* ללא רווח פנימי */
+
+  grid-template-areas:
+
+    "header header "
+    "article article "
+    "footer footer ";
+}
+
+header {
+  grid-area: header;
+  height: 100%;
+  /* גובה מתאים ל-header */
+  margin: 0;
+  padding: 0;
+  border: none;
+  margin-inline-start: 5px;
+
+
+  background-color: rgba(11, 46, 152, 0.6);
+
+  z-index: 10;
+  /* קובע שהקישורים יהיו מעל כל תוכן אחר */
+
+
+}
+
+article {
+  grid-area: article;
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+  margin-top: 0;
+  text-align: center;
+
+
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.arteverybady {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* CSS */
+.whatsapp-button {
+  position: fixed;
+  /* מקבע את הכפתור במסך */
+  bottom: 20px;
+  /* מיקום מהחלק התחתון של המסך */
+  right: 20px;
+  /* מיקום מהצד הימני של המסך */
+  width: 60px;
+  /* רוחב העיגול */
+  height: 60px;
+  /* גובה העיגול */
+  background-color: #25D366;
+  /* צבע WhatsApp */
+  border-radius: 50%;
+  /* הופך את הצורה לעיגול */
+  display: flex;
+  /* עיצוב המיקום הפנימי */
+  justify-content: center;
+  /* ממרכז את האייקון אופקית */
+  align-items: center;
+  /* ממרכז את האייקון אנכית */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* מוסיף צל */
+  cursor: pointer;
+  /* משנה את הסמן ליד */
+  z-index: 1000;
+  /* מבטיח שהכפתור יהיה תמיד למעלה */
+}
+
+.whatsapp-button i {
+  color: white;
+  /* צבע האייקון */
+  font-size: 30px;
+  /* גודל האייקון */
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe57;
+  /* צבע הכפתור משתנה בריחוף */
+  transition: background-color 0.3s;
+  /* אנימציה חלקה לשינוי הצבע */
+}
+
+.upHeader {
+  position: relative;
+  /* מגדיר את הקונטיינר כיחסית, כך שהטקסט יוכל להיות ממוקם בתוכו */
+  width: 100%;
+  /* רוחב מלא */
+}
+
+.upHeader img {
+  width: 100%;
+  /* תמונה תתפרש על כל הרוחב */
+  height: auto;
+  /* לשמור על יחס התמונה */
+  margin-bottom: -0.5px;
+}
+
+.upHeader-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  /* כהה את הרקע עם שקיפות */
+  z-index: 5;
+  /* מוודא שה-overlay מתחת לתוכן */
+}
+
+.upHeader-content {
+  position: absolute;
+  /* ממקם את הטקסט מעל התמונה */
+  top: 50%;
+  /* מיקום אנכי - 50% מהגובה */
+  left: 50%;
+  /* מיקום אופקי - 50% מהרוחב */
+  transform: translate(-50%, -50%);
+  /* מרכז את התוכן בדיוק באמצע */
+  text-align: center;
+  /* ממרכז את הטקסט */
+  color: rgb(255, 255, 255);
+  /* צבע הטקסט ללבן */
+  font-size: xx-large;
+  /* גודל הטקסט */
+  z-index: 9;
+  /* מוודא שהטקסט מעל overlay */
+}
+
+.upHeader-content h2 {
+  margin: 0;
+  color: rgb(255, 255, 255);
+  /* שינוי צבע הטקסט לבולט יותר */
+  text-shadow:
+    -0.3px -0.3px 0 #ffffff,
+    -0.3px -0.3px 0 #ffffff,
+    -0.3px -0.3px 0 #ffffff,
+    -0.3px -0.3px 0 #ffffff,
+    /* מסגרת לבנה קטנה יותר סביב הטקסט */
+}
+
+
+
+/* עיצוב תיבת החיפוש */
+.search-box {
+  display: flex;
+  justify-content: flex-start;
+  /* ממקם את התיבה בצד שמאל */
+  align-items: center;
+  margin: 20px;
+  margin-left: 5px;
+
+}
+
+.search-input {
+  width: 300px;
+  /* רוחב תיבת הקלט */
+  padding: 10px;
+  /* ריווח פנימי */
+  font-size: 16px;
+  /* גודל טקסט */
+  border: 2px solid #ccc;
+  /* צבע גבול */
+  border-radius: 25px;
+  /* פינות מעוגלות */
+  outline: none;
+  /* מסיר גבול חיצוני */
+  transition: border-color 0.3s;
+  /* אפקט מעבר לגבול */
+}
+
+.search-input:focus {
+  border-color: rgb(5, 84, 96);
+  /* צבע גבול בעת פוקוס */
+}
+
+.search-button {
+  background-color: rgb(5, 84, 96);
+  /* צבע רקע של הכפתור */
+  color: white;
+  /* צבע טקסט */
+  border: none;
+  /* מסיר גבול */
+  padding: 10px 20px;
+  /* ריווח פנימי */
+  font-size: 16px;
+  /* גודל טקסט */
+  border-radius: 25px;
+  /* פינות מעוגלות */
+  cursor: pointer;
+  /* שינוי הסמן בעת מעבר עם העכבר */
+  margin-left: 10px;
+  /* רווח בין התיבה לכפתור */
+  transition: background-color 0.3s;
+  /* אפקט מעבר בצבע */
+}
+
+.search-button:hover {
+  background-color: rgb(5, 84, 96);
+  /* צבע רקע בעת ריחוף */
+}
+
+
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+  /* מבטיח שהתפשטות השורה תהיה לאורך כל רוחב הדף */
+  justify-content: space-between;
+  /* האלמנטים יפרסו בצורה אחידה בשורה */
+  align-items: stretch;
+  /* כל העמודות יתפשטו לגובה אחיד */
+
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  /* כל עמודה תתפוס אותו גודל */
+  /* float: left; */
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 10px;
+  box-sizing: border-box;
+  /* לוודא שגם הריווח נכנס בחישוב רוחב */
+
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+    width: 100%;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  color: rgb(5, 84, 96);
+  border-radius: 5px;
+  /* מעגל את השוליים */
+  overflow: hidden;
+  /* מונע מתוכן לצאת מחוץ לגבולות המעוגלים */
+  transition: transform 0.3s ease;
+  /* אנימציה חלקה */
+}
+
+.card:hover {
+  transform: scale(0.95);
+
+}
+
+.card img {
+  width: 100%;
+  /* כל התמונה תתפשט לאורך הרוחב של הכרטיס */
+  height: 300px;
+  /* הגדרת גובה קבוע לכל התמונה */
+  object-fit: cover;
+  /* יגביל את התמונה כך שתכסה את כל האזור מבלי להתעוות */
+  display: block;
+  /* מונע רווחים מיותרים מתחת לתמונה */
+
+}
+
+
+.container {
+  padding: 0 16px;
+  font-size: 22px;
+}
+
+.container::after,
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: rgb(5, 84, 96);
+  ;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  /* אנימציה חלקה */
+}
+
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: rgb(0, 0, 0);
+
+  transform: scale(1.1);
+
+
+}
+
+footer {
+  grid-area: footer;
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+  padding: 10px;
+  /* רווח פנימי */
+  text-align: center;
+  /* למרכז טקסט */
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+
+}
+
+.footeverybady {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  color: white;
+  margin: 0%;
+  justify-content: center;
+  /* למקם את התוכן במרכז רוחבי */
+  align-items: center;
+  /* למקם את התוכן במרכז אנכי */
+
+
+
+}
+
+.footeverybady video {
+  width: 100%;
+  height: 100%;
+  /* הסרטון יתפרס על כל גובה ורוחב הפוטר */
+  object-fit: cover;
+  /* מוודא שהסרטון יכסה את השטח ללא עיוות */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.footCol {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  align-items: center;
+  top: 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  /* האלמנטים יהיו מעל הסרטון */
+  color: white;
+  width: 100%;
+  /* לוודא שהרוחב מתפשט על כל הרוחב של האלמנט */
+}
+
+/* CSS */
+
+
+.orderYacth {
+  font-size: xx-large;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-decoration: none;
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  border-radius: 5px;
+  box-sizing: 50px;
+  padding: 20px;
+}
+
+.orderYacth:hover {
+  /* background-color: transparent;
+  color: #ffffff; */
+  transform: scale(1.1);
+}
+
+
+.footeralllinks {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  /* הסרת שוליים חיצוניים */
+  padding: 0;
+  /* הסרת שוליים פנימיים */
+  justify-content: space-between;
+  /* רווח שווה בין העמודות */
+  align-items: stretch;
+  /* כל העמודות יימתחו לגובה שווה */
+
+
+}
+
+.footer-links {
+  display: flex;
+  flex: 1;
+  min-width: 250px;
+  /* להבטיח שהאורך של כל עמודה יהיה לפחות 250px */
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+  /* הסרת רווח פנימי */
+  margin: 0;
+  /* הסרת שוליים */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* רקע כהה עם שקיפות עבור כל קבוצה של קישורים */
+  align-items: flex-start;
+  /* למרכז את הקישורים אנכית */
+  /* font-size: large; */
+  /* justify-content: space-between; קישורים יתפרשו בין ההתחלה לסוף */
+  box-sizing: border-box;
+  /* להבטיח ששוליים פנימיים לא ישפיעו על הגודל */
+
+
+}
+
+.footer-links:last-child {
+  justify-content: space-between;
+  /* לוודא שהפסקה האחרונה ממורכזת */
+}
+
+.footer-links h1,
+.footer-links img {
+  margin: 0;
+  /* הסרת שוליים חיצוניים */
+  padding: 0;
+  /* הסרת רווח פנימי */
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+  font-size: x-large;
+  margin-right: 180px;
+  margin-top: 30px;
+
+}
+
+.footer-links a:hover {
+  /* text-decoration: underline; */
+  transform: scale(1.1);
+}
+
+/* CSS */
+
+.footer-links h2 {
+  text-align: center;
+  color: #ffffff;
+  /* margin-bottom: 20px; */
+  margin-top: 20px;
+  font-size: xx-large;
+  margin-right: 180px;
+}
+
+.footer-links h1 {
+  margin: 0;
+  /* צמצום השוליים העליונים והתחתונים של הכותרת */
+  font-size: xx-large;
+  margin-right: 180px;
+  margin-top: 20px;
+}
+
+.footer-links p {
+  margin: 0px 0;
+  /* צמצום השוליים העליונים והתחתונים של הפסקה */
+  /* line-height: 1.5;גובה שורה לפסקאות */
+  /* margin-bottom: 50px; */
+  font-size: x-large;
+  /* margin-bottom: 300px; */
+  margin-left: 15px;
+}
+
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: x-large;
+  margin-right: 180px;
+
+}
+
+.contact-item2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: x-large;
+  margin-right: 150px;
+
+}
+
+.contact-item i {
+  font-size: 20px;
+
+  color: #ffffff;
+
+}
+
+.contact-item span {
+  color: #ffffff;
+  margin-right: 10px;
+  /* רווח בין הסמל לכתובת או הטלפון */
+}
+
+.contact-item2 span {
+  color: #ffffff;
+  margin-right: 20px;
+  /* רווח בין הסמל לכתובת או הטלפון */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  /* gap: -5000px;
+  right: -300px; */
+  gap: 10px;
+  /* מרווח תקין בין האייקונים */
+  position: relative;
+  /* לאפשר ל-right לפעול */
+  /* right: 300px; מקם כראוי */
+  left: 160px;
+}
+
+.social-icon {
+  font-size: 10px;
+  color: #000000;
+  transition: color 0.3s;
+  margin: 10px;
+  /* מרווח תקין סביב האייקונים */
+}
+
+
+.social-icon:hover {
+  color: #000000;
+  /* צבע פעיל */
+
+}
+
+
+
+.social-icon1:hover {
+  color: #000000;
+  /* צבע פעיל */
+
+}
+
+
+iframe {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
+  z-index: 0;
+  font-family: 'Times New Roman', Times, serif;
+  border: none;
+}
+
+@media(max-width:600px) {
+  body {
+    grid-template-columns: 10% 8fr 10%;
+    grid-template-rows: 5% 8fr 15%;
+    grid-template-areas:
+      header
+      article
+      footer;
+  }
+}

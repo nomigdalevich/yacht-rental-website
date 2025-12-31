@@ -1,0 +1,682 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+
+
+body {
+  overflow-x: hidden;
+  /* font-family: 'Roboto', sans-serif; בחירת גופן Roboto */
+  /* font-family:'Open Sans', sans-serif;  */
+  /* font-family: 'Arial', sans-serif; */
+  font-family: 'Amatic SC', cursive;
+  /*גופן כתב  בעברית
+    /* font-family: "Varela Round", serif; */
+  display: grid;
+  grid-template-rows: 100px 2fr 1fr;
+  /* header + article + footer */
+  grid-template-columns: 1fr 1fr;
+  /* 3 עמודות */
+  height: 200vh;
+  margin: 0;
+  padding: 0;
+  /* ללא רווח פנימי */
+  grid-template-areas:
+
+    "header header "
+    "article article "
+    "footer footer ";
+}
+
+header {
+  grid-area: header;
+  height: 100%;
+  /* גובה מתאים ל-header */
+  margin: 0;
+  padding: 0;
+  border: none;
+  margin-inline-start: 5px;
+
+
+  background-color: rgb(63, 63, 63);
+
+  z-index: 10;
+  /* קובע שהקישורים יהיו מעל כל תוכן אחר */
+
+
+}
+
+article {
+  grid-area: article;
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+  margin-top: 0;
+
+
+}
+
+.artEverybody {
+  display: flex;
+  flex-wrap: wrap;
+  /* מאפשר למרכיבים לעבור לשורה הבאה */
+  justify-content: space-between;
+  /* מפזר את התמונות באופן שווה בשורה */
+  gap: 20px;
+  /* מוסיף רווח בין אלמנטים */
+  margin: 0;
+}
+
+.vid {
+
+  width: 100%;
+  /* הוידאו יתפוס את כל רוחב הדיב */
+  height: auto;
+  /* שמירה על יחס גובה-רוחב */
+  overflow: hidden;
+  /* מונע גלישה מחוץ לדיב */
+  position: relative;
+  /* מוודא שהוידאו נשאר בתוך המיכל */
+  margin: 0;
+  aspect-ratio: 16 / 6;
+  /* או כל יחס אחר שמתאים לך */
+
+}
+
+
+
+/* .vid video {
+  position: relative;
+  width: 100%; /* הוידאו יתפוס את כל רוחב הדיב */
+/* height: 100%; הוידאו יתפוס את כל גובה הדיב */
+/* object-fit: cover; מאפשר לוידאו למלא את הדיב בצורה נכונה בלי לגלוש */
+/* z-index: 1; */
+/* } */
+.vid video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  /* ערך נמוך מזה של הלוגו */
+}
+
+.yellow-bar {
+  /* הפס הצהוב שבתחתית הסרטון*/
+  position: absolute;
+  /* מיקום מוחלט */
+  top: 92%;
+  /* מיקום באמצע הסרטון */
+  left: 0;
+  width: 100%;
+  /* רוחב מלא של הפס */
+  height: 10px;
+  /* גובה הפס */
+  background-color: #ffde59;
+  /* צבע הרקע של הפס */
+  transform: translateY(-50%);
+  /* ממרכז את הפס באמצע */
+  /*חותך באמצע הפס עיגול שקוף*/
+  clip-path: polygon(0 0, calc(50% - 50px) 0, calc(50% - 50px) 100%, 0 100%, 0 0, 100% 0, 100% 100%, calc(50% + 50px) 100%, calc(50% + 50px) 0, 100% 0);
+}
+
+.ogen2
+
+/*סמל העוגן ששמתי באמצע הפס*/
+  {
+  position: absolute;
+  /* מיקום מוחלט */
+  /* top: 20%; ממקם את החץ 50% מהחלק העליון של ההורה */
+  width: 300px;
+  height: auto;
+  /*  */
+  z-index: 1;
+  top: 529px;
+  right: 610px;
+}
+
+
+
+.artp {
+  text-align: center;
+  margin-right: 110px;
+  font-size: xx-large;
+  margin-bottom: 20px;
+  font-weight: 200;
+  /* margin-top: 8px; */
+  margin-top: 30px;
+  font-weight: 1000;
+}
+
+
+.shachMat-col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex: 50%;
+  width: 100%;
+  /* margin-bottom: -10px; רווח בין השורות */
+  display: flex;
+  /* מציב את האלמנטים ב-flexbox */
+  align-items: center;
+  /* ממרכז את הפריטים במישור האנכי */
+  justify-content: center;
+  /* ממרכז את הפריטים במישור האופקי */
+  margin-top: 10px;
+  /* רווח עליון של 50 פיקסלים */
+  position: relative;
+  /* מאפשר מיקום מוחלט של החץ */
+  bottom: 30px;
+  margin: -40px;
+  right: 40px;
+}
+
+
+.box {
+  flex: 1;
+  /* כל Box תופס חצי מהשורה */
+  padding: 10px;
+  z-index: 0;
+  position: relative;
+  /* מאפשר מיקום מוחלט של החץ */
+}
+
+
+.box img {
+  width: 90%;
+  /* התמונה תתפוס את כל רוחב ה-box */
+  height: auto;
+  /* שמירה על יחס רוחב-גובה */
+  margin-right: 4.5%;
+  margin-top: -12%;
+  margin-left: 200px;
+  box-shadow: 10px
+    /*הזזה של הצל אופקית.*/
+    10px
+    /*הזזה של הצל אנכית.*/
+    20px
+    /*טשטוש הצל.*/
+    rgba(0, 0, 0, 0.3);
+  /*צבע הצל (שחור) עם שקיפות של 50%.*/
+  /**/
+  transition: transform 0.3s ease;
+  /* הגדרת זמן המעבר */
+}
+
+/*כשעוברים על התמונה-*/
+.box img:hover {
+  transform: scale(0.95);
+  /* התמונה מתקטנת קצת*/
+}
+
+.box p {
+  /* font-size: 1.2em; */
+  color: #333;
+  text-align: center;
+  /* ממרכז את הטקסט */
+  /* margin-top: -24px; */
+  margin-right: 5%;
+  margin-left: 5%;
+  /* margin-left: 8%; */
+  margin-bottom: 12%;
+  font-size: 29px;
+  line-height: 2.5;
+  /**/
+  /**/
+  /* padding: 3px; רווח פנימי */
+  /**/
+  height: auto;
+  transition: transform 0.3s ease;
+  /* הגדרת זמן המעבר */
+  top: -20px;
+  font-weight: 800;
+}
+
+.box p:hover {
+  transform: scale(1.1);
+  /*הטקסט קצת גודל*/
+}
+
+.linkHome
+
+/*vעיצוב הלינקים שמתחת כל טקסט*/
+  {
+  text-decoration: none;
+  display: inline-block;
+  /* מאפשר לתכונת הגבול להשפיע על האזור של הקישור */
+  /* padding: 6px; /* הוספת רווח פנימי מסביב לקישור */
+  text-decoration: none;
+  /* מבטל את הקו התחתון של הקישור */
+  font-size: 26px;
+  border-radius: 3px;
+  padding: 3px 15px;
+  /* רווח פנימי מינימלי מסביב לטקסט הקישור */
+  line-height: 1;
+  /* עוזר במרכזות הטקסט בתוך הקישור */
+  font-weight: 1000;
+  /* padding: 1px 8px; */
+
+  /*לשאול את אילה- */
+  /*אפשרות אחת-טורקיז*/
+  /* background-color:  rgb(5, 84, 96);
+    border: none; */
+  /* color: #ffffff; */
+
+  /**/
+
+  /*אפשרות שניה- שחור*/
+  /* border: 2px solid #000;בגודל 2 פיקסלים בצבע שחור */
+  /* background-color: #000; */
+  /* color: #ffffff; */
+
+
+  /*אפשרות שלישית- לבן ומסגרת שחורה*/
+  border: 1px solid #000;
+  background-color: #ffffff;
+  color: #000;
+
+  /**/
+
+  box-shadow: 5px
+    /*הזזה של הצל אופקית.*/
+    5px
+    /*הזזה של הצל אנכית.*/
+    20px
+    /*טשטוש הצל.*/
+    rgba(0, 0, 0, 0.1);
+  /*צבע הצל (שחור) עם שקיפות של 50%.*/
+}
+
+
+.linkHome:hover
+
+/*כשעוברים על הלינקים*/
+  {
+  /* color: rgb(255, 255, 255); */
+  color: #000;
+  background-color: #ffde59;
+  /* border-color: #000; */
+  border: none;
+  border-radius: 3px;
+}
+
+/*ארוו זה האלמנט של החץ, זה כל מה שעשיתי על החץ*/
+/*חץ ראשון*/
+.arrow1 {
+  position: absolute;
+  /* מיקום מוחלט */
+  top: 50%;
+  /* ממקם את החץ 50% מהחלק העליון של ההורה */
+  transform: translateY(-50%);
+  /* ממרכז את החץ באנכי */
+  animation: moveArrow 1.5s infinite;
+  /* הפעלת האנימציה לזוזת החץ */
+  width: 650px;
+  height: auto;
+  /*  */
+  z-index: 1;
+  left: 450px;
+  top: 100px;
+  transform: rotate(-10deg);
+  /* סיבוב של 10 מעלות נגד כיוון השעון */
+}
+
+/*חץ שני*/
+.arrow2 {
+  position: absolute;
+  /* מיקום מוחלט */
+  top: 50%;
+  /* ממקם את החץ 50% מהחלק העליון של ההורה */
+  transform: translateY(-50%);
+  /* ממרכז את החץ באנכי */
+  animation: moveArrow 1.5s infinite;
+  /* הפעלת האנימציה לזוזת החץ */
+  width: 400px;
+  height: auto;
+  /*  */
+  z-index: 1;
+  left: 500px;
+  top: -30px;
+  transform: rotate(-10deg);
+  /* סיבוב של 10 מעלות נגד כיוון השעון */
+}
+
+/*חץ שלישי*/
+.arrow3 {
+  position: absolute;
+  /* מיקום מוחלט */
+  top: 50%;
+  /* ממקם את החץ 50% מהחלק העליון של ההורה */
+  transform: translateY(-50%);
+  /* ממרכז את החץ באנכי */
+  animation: moveArrow 1.5s infinite;
+  /* הפעלת האנימציה לזוזת החץ */
+  width: 500px;
+  height: auto;
+  /*  */
+  z-index: 1;
+  left: 500px;
+  top: 250px;
+  transform: rotate(-10deg);
+  /* סיבוב של 10 מעלות נגד כיוון השעון */
+}
+
+/* .dibur
+        { */
+/* position: fixed;
+           bottom: 0; מיקום בתחתית הדף */
+/* left: 50%; מרכז את התמונה */
+/* transform: translateX(-50%); מתקן את ההזזה */
+/* height: auto;שומר על היחס של התמונה */
+/* width: 200px; */
+/* right: -100px; */
+/* bottom: -50px;  */
+/* } */
+
+/*זה האנימציה של החץ וכל מה שהחלתי עליה*/
+@keyframes moveArrow {
+
+  0%,
+  100% {
+    transform: translateX(0) rotate(-10deg);
+    /* מצב ההתחלה והסיום של האנימציה */
+  }
+
+  50% {
+    transform: translateX(10px) rotate(-10deg);
+    /* מצב האמצע של האנימציה */
+  }
+}
+
+footer {
+  grid-area: footer;
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+  padding: 10px;
+  /* רווח פנימי */
+  text-align: center;
+  /* למרכז טקסט */
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+
+}
+
+.footeverybady {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  color: white;
+  margin: 0%;
+  justify-content: center;
+  /* למקם את התוכן במרכז רוחבי */
+  align-items: center;
+  /* למקם את התוכן במרכז אנכי */
+
+
+
+}
+
+.footeverybady video {
+  width: 100%;
+  height: 100%;
+  /* הסרטון יתפרס על כל גובה ורוחב הפוטר */
+  object-fit: cover;
+  /* מוודא שהסרטון יכסה את השטח ללא עיוות */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.footCol {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  align-items: center;
+  top: 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  /* האלמנטים יהיו מעל הסרטון */
+  color: white;
+  width: 100%;
+  /* לוודא שהרוחב מתפשט על כל הרוחב של האלמנט */
+}
+
+
+.orderYacth {
+  font-size: xx-large;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-decoration: none;
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  border-radius: 5px;
+  box-sizing: 50px;
+  padding: 20px;
+}
+
+.orderYacth:hover {
+  /* background-color: transparent;
+  color: #ffffff; */
+  transform: scale(1.1);
+}
+
+
+.footeralllinks {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  /* הסרת שוליים חיצוניים */
+  padding: 0;
+  /* הסרת שוליים פנימיים */
+  justify-content: space-between;
+  /* רווח שווה בין העמודות */
+  align-items: stretch;
+  /* כל העמודות יימתחו לגובה שווה */
+
+
+}
+
+.footer-links {
+  display: flex;
+  flex: 1;
+  min-width: 250px;
+  /* להבטיח שהאורך של כל עמודה יהיה לפחות 250px */
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+  /* הסרת רווח פנימי */
+  margin: 0;
+  /* הסרת שוליים */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* רקע כהה עם שקיפות עבור כל קבוצה של קישורים */
+  align-items: flex-start;
+  /* למרכז את הקישורים אנכית */
+  /* font-size: large; */
+  /* justify-content: space-between; קישורים יתפרשו בין ההתחלה לסוף */
+  box-sizing: border-box;
+  /* להבטיח ששוליים פנימיים לא ישפיעו על הגודל */
+
+
+}
+
+.footer-links:last-child {
+  justify-content: space-between;
+  /* לוודא שהפסקה האחרונה ממורכזת */
+}
+
+.footer-links h1,
+.footer-links img {
+  margin: 0;
+  /* הסרת שוליים חיצוניים */
+  padding: 0;
+  /* הסרת רווח פנימי */
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+  font-size: x-large;
+  margin-right: 180px;
+  margin-top: 30px;
+
+}
+
+.footer-links a:hover {
+  /* text-decoration: underline; */
+  transform: scale(1.1);
+}
+
+/* CSS */
+
+.footer-links h2 {
+  text-align: center;
+  color: #ffffff;
+  /* margin-bottom: 20px; */
+  margin-top: 20px;
+  font-size: xx-large;
+  margin-right: 180px;
+}
+
+.footer-links h1 {
+  margin: 0;
+  /* צמצום השוליים העליונים והתחתונים של הכותרת */
+  font-size: xx-large;
+  margin-right: 180px;
+  margin-top: 20px;
+}
+
+.footer-links p {
+  margin: 0px 0;
+  /* צמצום השוליים העליונים והתחתונים של הפסקה */
+  /* line-height: 1.5;גובה שורה לפסקאות */
+  /* margin-bottom: 50px; */
+  font-size: x-large;
+  /* margin-bottom: 300px; */
+  margin-left: 15px;
+}
+
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: x-large;
+  margin-right: 180px;
+
+}
+
+.contact-item2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: x-large;
+  margin-right: 150px;
+
+}
+
+.contact-item i {
+  font-size: 20px;
+
+  color: #ffffff;
+
+}
+
+.contact-item span {
+  color: #ffffff;
+  margin-right: 10px;
+  /* רווח בין הסמל לכתובת או הטלפון */
+}
+
+.contact-item2 span {
+  color: #ffffff;
+  margin-right: 20px;
+  /* רווח בין הסמל לכתובת או הטלפון */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  /* gap: -5000px;
+  right: -300px; */
+  gap: 10px;
+  /* מרווח תקין בין האייקונים */
+  position: relative;
+  /* לאפשר ל-right לפעול */
+  /* right: 300px; מקם כראוי */
+  left: 160px;
+}
+
+.social-icon {
+  font-size: 10px;
+  color: #000000;
+  transition: color 0.3s;
+  margin: 10px;
+  /* מרווח תקין סביב האייקונים */
+}
+
+
+.social-icon:hover {
+  color: #000000;
+  /* צבע פעיל */
+
+}
+
+
+
+.social-icon1:hover {
+  color: #000000;
+  /* צבע פעיל */
+
+}
+
+
+
+/*קישורים של כל דף-לא לגעת!*/
+iframe {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
+  /* z-index: 1; */
+  font-family: 'Times New Roman', Times, serif;
+  border: none;
+  margin-bottom: 0;
+  height: 100px;
+  margin: 0;
+
+
+}
+
+
+/**/
+
+
+@media(max-width:600px) {
+  body {
+    grid-template-columns: 10% 8fr 10%;
+    grid-template-rows: 5% 8fr 15%;
+    grid-template-areas:
+      header
+      article
+      footer;
+  }
+}
