@@ -18,7 +18,8 @@ cd yacht-rental-website
 
 
 3.Open index.html in any web browser to view the website.
-Or visit the repository online: Yacht Rental Website on GitHub
+
+Or visit the repository online: [Yacht Rental Website on GitHub](https://github.com/nomigdalevich/yacht-rental-website)
 
 Notes
 
